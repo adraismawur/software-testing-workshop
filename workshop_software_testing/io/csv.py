@@ -1,17 +1,16 @@
-"""Contains code to deal with input of data
-"""
+"""This module contains functions for reading and writing CSV files"""
 
 from pathlib import Path
 
 
-def read_population_stats(filename):
-    """Reads the population stats from a file
+def read_csv(filename):
+    """Reads a CSV file and returns the contents as a list of lists
 
     Args:
         filename (str): The name of the file to read from
 
     Returns:
-        dict: A dictionary containing the population stats
+        list: A list of lists containing the contents of the CSV file
     """
     if not filename:
         raise ValueError("filename cannot be empty")
@@ -24,17 +23,13 @@ def read_population_stats(filename):
     if not file_path.exists():
         raise FileNotFoundError(f"File '{filename}' not found")
 
-    stats = {}
+    lines = []
+
     with open(file_path, "r") as file:
         for line in file:
-            name, population = line.strip().split(",")
+            lines.append(line.strip().split(","))
 
-            if name in stats:
-                raise ValueError(f"Duplicate entry for {name}")
-
-            stats[name] = int(population)
-
-    return stats
+    return lines
 
 
 def write_population_stats(filename, stats):
