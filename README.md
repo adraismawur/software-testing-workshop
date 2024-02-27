@@ -29,7 +29,6 @@ This set of examples only assumes you have python 3.x installed and have a basic
 
     - Basic testing exercises are in examples/basics.md
     - Unit testing exercises are in examples/unit.md
-    - Integration test exercices are in examples/integration.md
     - If you have time, extra testing info and exercises are in examples/extra.md
 
     All commands listed in the examples are run in the root directory of the repository (the same directory as this readme file).
