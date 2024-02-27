@@ -71,6 +71,7 @@ It can be frustrating when test runners do not detect your tests.
 
 
 ⚠️ __Before continuing to the next exercise, reset the repository state with `git reset --hard`__
+⚠️ __You may also need to remove untracked files by running `git clean -f`__
 
 
 ### Getting used to failing tests
