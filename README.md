@@ -8,7 +8,7 @@ This is the repository used in the Software Testing Workshop for the WUR Bioinfo
 
 This set of examples only assumes you have python 3.x installed and have a basic familiarity with PIP
 
-1. Clone this repository to begin. 
+1. Clone this repository to begin.
 2. Navigate to the repository folder in a shell, then run `python -m unittest`.
     You should see an output like this:
 
@@ -25,7 +25,7 @@ This set of examples only assumes you have python 3.x installed and have a basic
     If the above says something like `Ran 0 tests in 0.000s` let me know (or submit an issue if you are reading this online)
 
 3. Install the coverage module by running `pip install coverage`
-4. Start doing exercises! 
+4. Start doing exercises!
 
     - Basic testing exercises are in examples/basics.md
     - Unit testing exercises are in examples/unit.md
@@ -35,6 +35,15 @@ This set of examples only assumes you have python 3.x installed and have a basic
     All commands listed in the examples are run in the root directory of the repository (the same directory as this readme file).
     It may be a good idea to have an IDE open to modify code while keeping a separate shell to execute commands.
 
+
+## Reading material
+
+All of the examples here are using the python built-in unittest, which you can read here: https://docs.python.org/3/library/unittest.html#module-unittest
+
+There is a lot more to testing than is covered in this material.
+Of special interest may be the [List of assert methods](https://docs.python.org/3/library/unittest.html#assert-methods)
+
+I did not take any examples from the above links, but hopefully they supplement the examples you find here.
 
 ## Note: Usage of AI code generation
 
