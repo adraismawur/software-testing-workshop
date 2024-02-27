@@ -113,6 +113,8 @@ This is not a very useful test, but you will see a similar error if you expect t
 
 In order to fix these errors, see if you can go through each failed test and change the `actual_value` such that they no longer fail the test.
 
+⚠️ __Before continuing to other exercises, reset the repository state with `git reset --hard`__
+
 ### Next up
 
 This concludes the basic testing material.
