@@ -5,7 +5,9 @@ import unittest
 
 # class TestFail(unittest.TestCase):
 #     def testFailBoolean(self):
-#         """A simple test that fails as long as the universe is still operating normally"""
+#         """A simple test that fails as long as the universe is still
+#         operating normally
+#         """
 #         self.assertTrue(False)
 
 #     def testFailEquality(self):

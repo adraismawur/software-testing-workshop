@@ -2,7 +2,8 @@
 """
 
 # this file contains a very basic test, just to make sure everything works OK.
-# you can use this file as a template for your own tests by removing all the helpful comments :)
+# you can use this file as a template for your own tests by removing all the
+# helpful comments :)
 
 # unittest is a built-in module, you don't need to install it
 import unittest
@@ -20,20 +21,29 @@ class TestMath(unittest.TestCase):
     # every test method must also start with the word "test"
     def test_sum_squares_both_positive(self):
         """Tests the sum_squares function when both numbers are positive"""
-        # the test can contain any code you want, but it should end in one and only one assertion
-        # the test should also be isolated, meaning that it should not depend on any external state
+        # the test can contain any code you want, but it should end in one and
+        # only one assertion
+        # the test should also be isolated, meaning that it should not depend
+        # on any external state
 
-        # personally I like to separate the setup, execution and assertion of the test
+        # personally I like to separate the setup, execution and assertion of
+        # the test
 
-        # this bit is the setup. it should contain any code that is necessary for the test to run
+        # this bit is the setup. it should contain any code that is necessary
+        # for the test to run
         a = 2
         b = 4
 
         # this bit would be the execution
-        # I prefer to have the definitions for the expected and actual results defined like this
-        # right next to each other at the end so I always know where to find them
+        # I prefer to have the definitions for the expected and actual results
+        # defined like this, right next to each other at the end so I always
+        # know where to find them
         expected_result = 20
         actual_result = sum_squares.sum_squares(a, b)
 
-        # finally, we have the assertion. this should be the last line of the test
+        # finally, we have the assertion. this should be the last line of the
+        # test
         self.assertEqual(expected_result, actual_result)
+
+        # note that for certain tests, you may not be able to use this
+        # structure at all. The stub examples are such a case
