@@ -4,7 +4,7 @@
 from workshop_software_testing.classes.city import City
 
 
-def parse_places(data):
+def parse_cities(data):
     """Parses a list of lists into a list of city objects
 
     list is expected to be in the format:

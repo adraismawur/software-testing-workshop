@@ -2,7 +2,7 @@
 """
 
 from workshop_software_testing.io.csv import read_csv, write_population_stats
-from workshop_software_testing.stats.parse import parse_places
+from workshop_software_testing.stats.parse import parse_cities
 from workshop_software_testing.math.sum_squares import sum_squares
 
 from workshop_software_testing.classes.city import City
@@ -15,7 +15,7 @@ def print_population_stats(filename):
         filename (str): The name of the file to read from
     """
     data = read_csv(filename)
-    cities = parse_places(data)
+    cities = parse_cities(data)
 
     for city in cities:
         print(city)
@@ -29,7 +29,7 @@ def find_and_write_stats(filename, city):
         city (str): The name of the city to find the population stats of
     """
     data = read_csv(filename)
-    cities = parse_places(data)
+    cities = parse_cities(data)
 
     city = City.find(city, cities)
 
@@ -53,7 +53,7 @@ def sum_square_of_the_nicest_places(filename):
         int: The sum of the squares of the populations of the nicest cities
     """
     data = read_csv(filename)
-    stats = parse_places(data)
+    stats = parse_cities(data)
 
     nice_place_a = "wageningen"
     nice_place_b = "sneek"
