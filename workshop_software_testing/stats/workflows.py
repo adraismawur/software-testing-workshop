@@ -2,57 +2,72 @@
 """
 
 from workshop_software_testing.io.csv import read_csv, write_population_stats
-from workshop_software_testing.stats.parse import parse_stats
+from workshop_software_testing.stats.parse import parse_places
 from workshop_software_testing.math.sum_squares import sum_squares
 
+from workshop_software_testing.classes.city import City
 
-def find_and_write_stats(filename, place):
-    """Finds the population stats of a place and writes the stats to a file
+
+def print_population_stats(filename):
+    """Prints the population stats of a city
 
     Args:
         filename (str): The name of the file to read from
-        place (str): The name of the place to find the population stats of
     """
     data = read_csv(filename)
-    stats = parse_stats(data)
+    cities = parse_places(data)
 
-    pop = stats.get(place)
+    for city in cities:
+        print(city)
 
-    if pop is None:
-        print(f"Population of {place} is unknown")
+
+def find_and_write_stats(filename, city):
+    """Finds the population stats of a city and writes the stats to a file
+
+    Args:
+        filename (str): The name of the file to read from
+        city (str): The name of the city to find the population stats of
+    """
+    data = read_csv(filename)
+    cities = parse_places(data)
+
+    city = City.find(city, cities)
+
+    if city is None:
+        print(f"Population of {city} is unknown")
         return
 
-    print(f"Population of {place} is {pop}")
+    print(city)
 
-    write_population_stats("output.txt", stats)
+    write_population_stats("output.txt", cities)
 
 
 def sum_square_of_the_nicest_places(filename):
-    """Finds the population stats of the nicest places and returns the sum of
+    """Finds the population stats of the nicest cities and returns the sum of
     the squares of their populations
 
     Args:
         filename (str): The name of the file to read from
 
     Returns:
-        int: The sum of the squares of the populations of the nicest places
+        int: The sum of the squares of the populations of the nicest cities
     """
     data = read_csv(filename)
-    stats = parse_stats(data)
+    stats = parse_places(data)
 
     nice_place_a = "wageningen"
     nice_place_b = "sneek"
 
-    pop_a = stats.get(nice_place_a)
-    pop_b = stats.get(nice_place_b)
+    place_a = City.find(nice_place_a, stats)
+    place_b = City.find(nice_place_b, stats)
 
-    if pop_a is None:
+    if place_a is None:
         print(f"Population of {nice_place_a} is unknown")
         exit()
 
-    if pop_b is None:
+    if place_b is None:
         print(f"Population of {nice_place_b} is unknown")
         exit()
 
-    cool_number = sum_squares(pop_a, pop_b)
-    print(f"Sum of squares of {pop_a} and {pop_b} is {cool_number}")
+    cool_number = sum_squares(place_a.population, place_b.population)
+    print(f"Sum squares of {place_a.name} and {place_b.name} is {cool_number}")

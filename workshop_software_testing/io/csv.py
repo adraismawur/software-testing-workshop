@@ -32,12 +32,12 @@ def read_csv(filename):
     return lines
 
 
-def write_population_stats(filename, stats):
+def write_population_stats(filename, cities):
     """Writes the population stats to a file
 
     Args:
         filename (str): The name of the file to write to
-        stats (dict): A dictionary containing the population stats
+        cities (list): A list of city objects
     """
     if not filename:
         raise ValueError("filename cannot be empty")
@@ -45,14 +45,14 @@ def write_population_stats(filename, stats):
     if not isinstance(filename, str):
         raise TypeError("filename must be a string")
 
-    if not stats:
-        raise ValueError("stats cannot be empty")
+    if not cities:
+        raise ValueError("cities cannot be empty")
 
-    if not isinstance(stats, dict):
-        raise TypeError("stats must be a dictionary")
+    if not isinstance(cities, list):
+        raise TypeError("cities must be a list")
 
     file_path = Path(filename)
 
     with open(file_path, "w") as file:
-        for name, population in stats.items():
-            file.write(f"{name},{population}\n")
+        for city in cities:
+            file.write(f"{city.name},{city.population}\n")

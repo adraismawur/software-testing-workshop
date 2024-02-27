@@ -1,9 +1,11 @@
 """Contains code to parse a population data
 """
 
+from workshop_software_testing.classes.city import City
 
-def parse_stats(data):
-    """Parses a list of lists into a dictionary
+
+def parse_places(data):
+    """Parses a list of lists into a list of city objects
 
     list is expected to be in the format:
     [
@@ -13,18 +15,16 @@ def parse_stats(data):
     ]
 
     Args:
-        data (list): A list of lists containing the data to parse
+        data (list): A list of lists containing the population data
 
     Returns:
-        dict: A dictionary containing the parsed data
+        list: A list of city objects
     """
-    stats = {}
+    cities = []
+
     for row in data:
         name, population = row
 
-        if name in stats:
-            raise ValueError(f"Duplicate entry for {name}")
+        cities.append(City(name, int(population)))
 
-        stats[name] = int(population)
-
-    return stats
+    return cities
