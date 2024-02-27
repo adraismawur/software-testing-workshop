@@ -5,12 +5,11 @@ from workshop_software_testing.math.sum_squares import sum_squares
 
 def run(argv):
     if len(argv) != 4:
-        print("Usage: python main.py <filename> <place> <output>")
+        print("Usage: python main.py <filename> <place>")
         exit(1)
 
     filename = argv[1]
     place = argv[2]
-    output = argv[3]
 
     pop_stats = stats.read_population_stats(filename)
 
@@ -39,4 +38,4 @@ def run(argv):
 
     print(f"Population of {place} is {find_pop}")
 
-    stats.write_population_stats(output, pop_stats)
+    stats.write_population_stats("output.txt", pop_stats)
