@@ -61,7 +61,7 @@ In this case, if your test does not do what you expect it to do, check if the co
 The code being tested exists in `workshop_software_testing/classes/city.py`.
 
 
-## Important asserts for specific types
+### Important asserts for specific types
 
 There are specific assert methods which are more appropriate for certain types than an assertEqual.
 These have a built-in tolerance range or give you more information about what the difference is between an expected value and an actual value.
@@ -71,10 +71,51 @@ In this example, we will explore two such asserts:
 - AssertListEqual
 
 In your work you will likely encounter data in the form of floating-point numbers (containing decimals) as opposed to whole integers.
-Because of technical reasons very much beyond the scope of this exercise, floating point numbers
+
+Because of technical reasons beyond the scope of this exercise, floating point numbers cannot always be accurately represented within binary data on a computer.
+
+to see this in a practical example, do the following:
+
+1. Create a new test anywhere, as long as you can find it again. It may be a good exercise to make a new folder under tests/unit for miscellaneous tests like this one
+2. In this test, create two variables:
+    - `a = 0.1 + 0.1 + 0.1`
+    - `b = 0.3`
+3. These ought to be equal, so try to assert that with `self.assertEqual(a, b)`
+
+You should see an output like this:
+
+```
+======================================================================
+FAIL: test_float (tests.unit.misc.test_misc.TestMisc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/drais008/src/workshop-software-testing/tests/unit/misc/test_misc.py", line 28, in test_float
+    self.assertEqual(a, b)
+AssertionError: 0.30000000000000004 != 0.3
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)
+```
+
+Thankfully, assert statements exist to work around this issue.
+
+1. Try creating a passing test using `self.assertAlmostEqual(a, b, places)`, where `places` is the number of decimal places you want to round to.
+2. See if you can spot at what value of `self.assertAlmostEqual` fails, and whether this makes sense given the value of `0.30000000000000004`.
+
+`self.assertAlmostEqual` contains another argument, `delta` which allows you to indicate a tolerance for the difference between the two numbers under comparison.
+This is useful for when you expect a number to be within a certain range (due to randomness within a function or a process), but do not know the exact number.
+
+You can try this by simply changing the numbers to be integers and setting the delta to be greater than the difference between those two numbers:
+
+1. Choose two numbers, e.g. `a = 5` and `b = 10`.
+2. Change the self.assertAlmostEquals to contain the two values and a delta parameter, e.g. `self.assertAlmostEquals(a, b, delta=5)`. You should see the test pass
+3. Change the delta to be lower than the actual difference to see the test fail
+
+### Expecting certain types from methods
 
 
-## Expecting certain types from methods
 
 ## expecting errors
 
