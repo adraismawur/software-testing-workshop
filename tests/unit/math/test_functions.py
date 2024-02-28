@@ -46,4 +46,4 @@ class TestMath(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
 
         # note that for certain tests, you may not be able to use this
-        # structure at all. The stub examples are such a case
+        # structure at all
