@@ -15,7 +15,7 @@ class City:
 
     def has_people_in_it(self):
         """Returns True if the city has people in it, False otherwise"""
-        return self.population > 0
+        return self.population == 0
 
     def is_nice(self):
         """Returns True if the city is nice, False otherwise"""
@@ -36,3 +36,18 @@ class City:
             if city.name == city_name:
                 return city
         return None
+
+    @staticmethod
+    def to_dict(cities):
+        """Converts a list of cities to a dictionary
+
+        Args:
+            cities (list): A list of city objects
+
+        Returns:
+            dict: A dictionary containing the cities
+        """
+        city_dict = {}
+        for city in cities:
+            city_dict[city.name] = city.population
+        return city_dict
