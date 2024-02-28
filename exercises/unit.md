@@ -212,3 +212,5 @@ You can read about the python built-in unit testing library here: https://docs.p
 
 Most programming languages will have testing capabilities that are very similar to those used in these exercises, and will largely use the same terminology (unit, test suite, test case, assert).
 Use these terms to look for ways of implementing tests in applications if you are using a different programming language.
+
+You can continue onto the integration test exercise or the extra unit test exercises.
