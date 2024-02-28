@@ -5,11 +5,11 @@ Reading these sections should tell you all you need to know to write test method
 
 ## Test runners
 
-These examples use unittest by running `python -m unittest`, the built-in test module for python.
+These exercises use unittest by running `python -m unittest`, the built-in test module for python.
 In order to see arguments that you can pass to the test runners, try `python -m unittest --help`
 
 There are other test runners that you can use e.g. `pytest` that you can install using PIP.
-However note that these examples all use `python -m unittest`
+However note that these exercises all use `python -m unittest`
 
 Most test runners behave the same, in that they will try to discover any tests in the same directory this readme is in (the root directory).
 However, some test runners do behave differently or display results differently.

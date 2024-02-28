@@ -4,9 +4,9 @@ Repository for the BIF Software Testing workshop
 
 ## Introduction
 
-This is the repository used in the Software Testing Workshop for the WUR Bioinformatics group. This repository contains a number of examples relating to the workshop, but should stand on their own as well.
+This is the repository used in the Software Testing Workshop for the WUR Bioinformatics group. This repository contains a number of exercises relating to the workshop, but should stand on their own as well.
 
-This set of examples only assumes you have python 3.x installed and have a basic familiarity with PIP
+This set of exercises only assumes you have python 3.x installed and have a basic familiarity with PIP
 
 1. Clone this repository to begin.
 2. Navigate to the repository folder in a shell, then run `python -m unittest`.
@@ -27,27 +27,27 @@ This set of examples only assumes you have python 3.x installed and have a basic
 3. Install the coverage module by running `pip install coverage`
 4. Start doing exercises!
 
-    - Basic testing exercises are in examples/basics.md
-    - Unit testing exercises are in examples/unit.md
-    - An exercise for integration testing in examples/integration.md
-    - If you have time, extra testing info and exercises are in examples/extra.md
+    - Basic testing exercises are in `exercises/basics.md`
+    - Unit testing exercises are in `exercises/unit.md`
+    - An exercise for integration testing in `exercises/integration.md`
+    - If you have time, extra testing info and exercises are in `exercises/extra.md`
 
-    All commands listed in the examples are run in the root directory of the repository (the same directory as this readme file).
+    All commands listed in the exercises are run in the root directory of the repository (the same directory as this readme file).
     It may be a good idea to have an IDE open to modify code while keeping a separate shell to execute commands.
 
 
 ## Reading material
 
-All of the examples here are using the python built-in unittest, which you can read here: https://docs.python.org/3/library/unittest.html#module-unittest
+All of the exercises here are using the python built-in unittest, which you can read here: https://docs.python.org/3/library/unittest.html#module-unittest
 
 There is a lot more to testing than is covered in this material.
 Of special interest may be the [List of assert methods](https://docs.python.org/3/library/unittest.html#assert-methods)
 
-I did not take any examples from the above links, but hopefully they supplement the examples you find here.
+I did not take any material from the above links, but they may supplement the exercises you find here.
 
 ## Note: Usage of AI code generation
 
-GitHub Copilot was used to generate some of the content in this repository, with the exception of this readme file.
+GitHub Copilot was used to generate some of the content in this repository, with the exception of this readme file and the markdown files under exercises/
 
 Feel free to use copilot to suggest or generate unit tests for you within this workshop, but note that it is especially important to check tests written by AI, as AI may not understand (or care about, for that matter) the full context of your code and what makes a correct test!
 
